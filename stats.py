@@ -2,12 +2,12 @@ def get_num_words(text):
     words = text.split()
     return len(words)
 
-def get_char_count(text):
-    my_dict = {}
+def get_chars_dict(text):
+    chars = {}
     for char in text:
-        lower_char = char.lower()
-        if lower_char not in my_dict:
-            my_dict[f"{lower_char}"] = 1
-            continue
-        my_dict[f"{lower_char}"] += 1
-    return my_dict
+        lowered_char = char.lower()
+        if lowered_char in chars:
+            chars[lowered_char] += 1
+        else:
+            chars[lowered_char] = 1
+    return chars
